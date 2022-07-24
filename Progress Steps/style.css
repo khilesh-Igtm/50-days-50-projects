@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+   
+}
+body{
+    font-family: 'Muli', sans-serif;
+    /* display flex will make everything in a row , if you want to do in column */
+    /* then use flex-direction to column */
+    display: flex;
+    align-items: center;
+    /* justify-content will not do anything if there's no height , so we specified height here */
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    /* it's the background of the body */
+    background-color: palegoldenrod;
+}
+.container{
+    text-align: center;
+}
+.progress-container{
+    display: flex;
+    /* this will create a space between the progress-container that is the 1 , 2 ,3 and 4*/
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    /* it will give the width of350px between 1,2,3and 4 */
+    width: 350px;
+}
+/* this progress-container is before the next or previous button is clicked */
+.progress-container::before{
+    /* we have to specify empty content otherwise we will not get our desired output */
+    content: '';
+    background-color: gray;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* transform: translateY(-50%); */
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+    
+}
+.progress{
+    background-color: green;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* this translateY wull move the element along the y direction */
+    /* transform: translateY(-50%); */
+    height: 4px;
+    width: 0%;
+    /* z-index-1 will move it backward */
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.circle{
+    background-color: #fff;
+    color: #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid gray;
+    transition: 0.4s ease;
+}
+.circle.active{
+    /* this is only for the active circle */
+    border-color: #3498db;
+}
+.btn{
+    background-color: #3498db;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+.btn:active{
+    transform: scale(0.98);
+}
+/* .btn:focus{
+    outline: 0;
+} */
+.btn:disabled{
+    background-color: gray;
+    cursor: not-allowed;
+}

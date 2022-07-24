@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+   
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    /* display flex will make everything in a row , if you want to do in column */
+    /* then use flex-direction to column */
+    display: flex;
+    align-items: center;
+    /* justify-content will not do anything if there's no height , so we specified height here */
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    /* it's the background of the body */
+    background-color: palegoldenrod;
+}
+.bg{
+    background: url('https://media.gq.com/photos/5d4b2102b8eb960008a23a1c/16:9/w_2560%2Cc_limit/RLD-FINN.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: -30;
+    left: -30;
+    /* space should be there between 100vw and 60px */
+    width: calc(100vw + 60px);
+    /* we added this 60px in height and width because we to have complete blur to top-bottom
+    and left-right means all should be covered. */
+    height: calc(100vh + 60px);
+    z-index: -1;
+    /* at starting it would be complete blur bcz it's 0px */
+    filter: blur(0px);
+}
+.loading-text{
+    font-size: 50px;
+    color: #fff;
+}
